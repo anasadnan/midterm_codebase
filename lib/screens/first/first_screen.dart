@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import '../../models/note.dart';
+import '../../models/mock_data.dart';
 
 class FirstScreen extends StatefulWidget {
   final Note note;

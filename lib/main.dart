@@ -12,5 +12,6 @@ void main() {
       primarySwatch: Colors.blue,
     ),
     home: FirstScreen(mockNoteList),
+    //home: SecondScreen(),
   ));
 }
