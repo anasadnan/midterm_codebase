@@ -79,14 +79,19 @@ class _FirstScreenState extends State<FirstScreen> {
           FloatingActionButton(
               child: Icon(Icons.expand_less),
               tooltip: 'Show less. Hide notes content',
-              onPressed: () {}),
+              onPressed: () => setState((){
+                //widget.note.mockNoteList.reduce(index);
+              }),
+              ),
 
           /* Notes: for the "Show More" icon use: Icons.menu */
 
           FloatingActionButton(
             child: Icon(Icons.add),
             tooltip: 'Add a new note',
-            onPressed: () {},
+            onPressed: () => setState((){
+              //widget.note.mockNoteList.add();
+            }),
           ),
         ],
       ),
