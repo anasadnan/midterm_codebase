@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:midterm/models/note.dart';
 
+import "models/mock_data.dart";
 import 'screens/first/first_screen.dart';
 
 void main() {
@@ -9,6 +11,6 @@ void main() {
     theme: ThemeData(
       primarySwatch: Colors.blue,
     ),
-    home: FirstScreen(),
+    home: FirstScreen(mockNoteList),
   ));
 }

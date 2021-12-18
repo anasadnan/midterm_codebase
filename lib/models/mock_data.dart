@@ -4,14 +4,14 @@ import 'note.dart';
 
 //final mockNoteList = <Note>[];
 
-List<Note> myNoteList = [
-  Note(title: "What is Flutter?", items:[
+List<Note> mockNoteList = [
+  Note(title: "What is Flutter?", mockNoteList:[
     Note( title: "Flutter is an open-source UI framework for creating native mobile applications. It allows developers to build mobile application a single codebase.", completed: null, ),
   ]),
-  Note(title: "Stateful Widgets", items:[
+  Note(title: "Stateful Widgets", mockNoteList:[
     Note( title: "The widgets whose statecan be altered once they are build are called stateful widgets.", completed: null, ),
   ]),
-    Note(title: "Conditional (ternary) operator", items:[
+    Note(title: "Conditional (ternary) operator", mockNoteList:[
     Note( title: "The conditional (ternary) operator in Dart takes three operands: a conditional, first expression (if truthy) and second expression (if falsy).", completed: null, ),
   ])
 ];

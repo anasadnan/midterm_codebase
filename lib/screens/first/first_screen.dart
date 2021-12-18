@@ -2,13 +2,20 @@
 //! Parts of the code have been given. Complete the remaining.
 
 import 'package:flutter/material.dart';
+import '../../models/note.dart';
 
 class FirstScreen extends StatefulWidget {
+  final Note note;
+
+  FirstScreen(this.note);
   @override
   _FirstScreenState createState() => _FirstScreenState();
 }
 
 class _FirstScreenState extends State<FirstScreen> {
+  var change= new List(20);
+  bool signal = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +35,8 @@ class _FirstScreenState extends State<FirstScreen> {
         ],
       ),
       body: ListView.separated(
-        itemCount: 4,
+        itemCount: 4,//widget.note.mockNoteList.length,
+        //itemBuilder: (context, index)
         separatorBuilder: (context, index) => Divider(
           color: Colors.blueGrey,
         ),
@@ -40,14 +48,21 @@ class _FirstScreenState extends State<FirstScreen> {
               children: [
                 IconButton(
                   icon: Icon(Icons.edit, color: Colors.blue),
-                  onPressed: () {},
+                  onPressed: () =>((){
+                    widget.note.mockNoteList[index] = Note(
+                      title: widget.note.mockNoteList[index].title,
+                      completed: !widget.note.mockNoteList[index].completed
+                    );
+                  }),
                 ),
                 IconButton(
                   icon: Icon(
                     Icons.delete,
                     color: Colors.blue,
                   ),
-                  onPressed: () {},
+                  onPressed: () => setState((){
+                    widget.note.mockNoteList.removeAt(index);
+                  }),
                 ),
               ],
             ),
@@ -62,7 +77,7 @@ class _FirstScreenState extends State<FirstScreen> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
-              child: Icon(Icons.menu),
+              child: Icon(Icons.expand_less),
               tooltip: 'Show less. Hide notes content',
               onPressed: () {}),
 
